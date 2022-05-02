@@ -6,4 +6,3 @@
 NOTE:
 - This is a simple ASP.NET web application that uses CRUD actions for viewing, adding , deleting Products.
 - In order to comunicate with the Databbase, make sure to provide the sql server's "User Id" and "Password" in the parameters of <Connection String>.
-- You can either choose to 
