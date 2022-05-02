@@ -1,0 +1,64 @@
+﻿
+
+@model Product
+
+
+
+
+
+
+<div class="my-5">
+
+    <form enctype="multipart/form-data" asp-action="Update" asp-controller="Product" method="post">
+
+        @*when the model transfer the new data to the controller it is important to pass the ID and the Photo path in a 'hidden input' for the pupose of remembering those data in case the user didn't modify them *@
+        <input hidden asp-for="Id" />
+        <input hidden asp-for="Photo" />
+
+
+        <div class="form-row">
+            <div class="form-group col-12">
+                <label asp-for="Name"></label>
+                <input type="text" class="form-control" asp-for="Name" />
+                <span asp-validation-for="Name" class="small text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-12">
+                <label asp-for="Price"></label>
+                <input type="number" class="form-control" asp-for="Price" />
+                <span asp-validation-for="Price" class="small text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-12">
+                <label asp-for="InStock"></label>
+
+                <select class="form-control custom-select" asp-for="InStock" asp-items="Html.GetEnumSelectList<InStock>()">
+                    <option value="">Is the product in Stock :</option>
+
+                </select>
+
+                <span asp-validation-for="InStock" class="small text-danger"></span>
+
+            </div>
+        </div>
+
+
+
+
+        <div class="form-row">
+            <div class="form-group col-12">
+                <button class="btn btn-dark" type="submit">Update</button>
+                <a asp-action="Index" asp-controller="Product" clss="btn btn-dark my-3">Cancel</a>
+            </div>
+        </div>
+
+
+
+    </form>
+
+</div>
+

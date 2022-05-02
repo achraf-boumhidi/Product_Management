@@ -1,0 +1,15 @@
+﻿@model Product
+
+
+
+
+<img src="@Model.Photo" width="100" height="100" />
+<p>ID = @Model.Id</p>
+<p>Name = @Model.Name</p>
+<p>Price = @Model.Price</p>
+
+<p>Is the product in stock : = @Model.InStock</p>
+
+
+<a class="btn btn-sm my-auto btn-secondary" asp-action="Index" asp-controller="Product"> Back</a>
+

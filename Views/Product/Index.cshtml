@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Product>
+
+<h1>List of all Products: </h1>
+
+<div class="row">
+    @foreach (Product pro in Model)
+    {
+        
+
+
+    <div class="col-12 col-sm-6 mb-2 col-lg-4">
+        <img src="@pro.Photo" width="40" height="210" class="card-img-top" alt="@pro.Name" />
+        <div class="card-body text-center"></div>
+        <h5 class="card-title"> Name : @pro.Name</h5>
+        <h5 class="card-title"> Price : @pro.Price  $</h5>
+
+
+        <div class="text-white">
+            <a class="btn btn-sm btn-primary" asp-action="Details" asp-controller="Product" asp-route-id="@pro.Id">Details</a>
+            <a class="btn btn-sm my-auto btn-secondary" asp-action="Update" asp-controller="Product" asp-route-id="@pro.Id">Update</a>
+            <a class="btn btn-sm btn-danger" asp-action="Delete" asp-controller="Product" asp-route-id="@pro.Id">Delete</a>
+        </div>
+    </div>
+    }
+</div>
+
